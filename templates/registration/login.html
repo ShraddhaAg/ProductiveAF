@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
 
-  </head>
 
-  <body>
+{% extends 'base.html' %}
+    {% block content %}
+    <form>
     <div class="columns is-mobile">
       <div class="column is-half is-offset-one-quarter">
         <div class="columns">
@@ -63,6 +58,5 @@
       </div>
       <div class="column"></div>
     </div>
-
-  </body>
-</html>
+    </form>
+    {% endblock %}
