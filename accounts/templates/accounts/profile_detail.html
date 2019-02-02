@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ profile.user }}
+{{profile.name}}
+{{profile.email_id}}
+{{profile.notification_time}}
+{{profile.streak}}
+{{profile.coins}}
+{% for intrest in profile.intrests.all %}
+{{intrest.topic}}
+{% endfor %}
+{% endblock %}
