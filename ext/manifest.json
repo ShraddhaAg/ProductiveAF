@@ -1,0 +1,22 @@
+{
+  "name": "ProductiviteAF",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Boost your Productivity",
+  "homepage_url": "http://google.com",
+
+  "default_locale": "en",
+  "background": {
+    "scripts": ["src/bg/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "off.png"
+  },
+  "permissions": [
+    "tabs",
+    "history",
+    "https://*/*",
+    "http://*/*"
+  ]
+}

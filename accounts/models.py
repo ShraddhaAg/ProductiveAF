@@ -16,7 +16,6 @@ class Profile(models.Model):
     coins = models.IntegerField(blank=True, null=True)
     intrests = models.ManyToManyField('Intrest',
         help_text='Select all your preferred choices!')
-    key = models.ManyToManyField('Keywords')
 
     def __str__(self):
         return self.name
@@ -45,7 +44,7 @@ class Keywords(models.Model):
     link = models.ManyToManyField('Link')
 
     def __str__(self):
-        return self.topic
+        return self.kw
 
     class Meta:
         ordering = ['kw']

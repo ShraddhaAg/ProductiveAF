@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for key in keywords_list %}
+  {{ key.kw }}
+  {% for links in key.link.all %}
+    {{links.url}}
+  {% endfor %}
+{% endfor %}
+<a href="{% url 'profile-detail' %}">Profile</a>
+{% endblock %}
