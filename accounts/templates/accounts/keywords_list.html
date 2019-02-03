@@ -1,10 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
+<br>
+    <section class="hero is-small is-dark" >
+        <div class="hero-body">
+        </div>
+    </section>
+    <br>
+
 {% for key in keywords_list %}
-  {{ key.kw }}
-  {% for links in key.link.all %}
-    {{links.url}}
-  {% endfor %}
+
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Keywords</p>
+        <br><br>
+        <p class="has-text-centered has-text-grey is-size-3">{{ key.kw }}</p>
+
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title has-text-grey has-text-centered">KEEP IT UP!</p>
+      <figure class="image is-4by3">
+        <img src="https://image.flaticon.com/icons/svg/1141/1141757.svg">
+      </figure>
+
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Lined up</p>
+      <div class="content">
+        {% for links in key.link.all %}
+        <article class="message is-success">
+          <div class="message-body">
+          <a href="{{links.url}}">{{links.url}}</a>
+          </div>
+        </article>
+        {% endfor %}
+
+      </div>
+
+    </article>
+  </div>
+</div>
 {% endfor %}
-<a href="{% url 'profile-detail' %}">Profile</a>
+<a class="button is-link is-large "href="{% url 'profile-detail' %}">Profile</a>
 {% endblock %}
