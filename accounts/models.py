@@ -16,6 +16,7 @@ class Profile(models.Model):
     coins = models.IntegerField(blank=True, null=True)
     intrests = models.ManyToManyField('Intrest',
         help_text='Select all your preferred choices!')
+    key = models.ManyToManyField('Keywords')
 
     def __str__(self):
         return self.name
