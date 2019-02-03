@@ -9,4 +9,5 @@
 {% for intrest in profile.intrests.all %}
 {{intrest.topic}}
 {% endfor %}
+<a href="{% url 'keywords-list' %}">Go to TODOS</a>
 {% endblock %}

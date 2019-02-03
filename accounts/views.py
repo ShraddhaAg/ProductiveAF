@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from accounts.models import Profile, Intrest
+from accounts.models import Profile, Intrest, Keywords
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -45,3 +45,6 @@ class ProfileUpdate(LoginRequiredMixin, UpdateView):
 # class ProfileDelete(DeleteView):
 #     model = Profile
 #     success_url = reverse_lazy('profile')
+
+class KeywordList(generic.ListView):
+    model = Keywords
