@@ -1,12 +1,82 @@
 {% extends 'base.html' %}
-{% block content %}
-{{ profile.user }}
-{{profile.name}}
-{{profile.email_id}}
-{{profile.notification_time}}
-{{profile.streak}}
-{{profile.coins}}
-{% for intrest in profile.intrests.all %}
-{{intrest.topic}}
-{% endfor %}
+
+	{% block content %}
+
+		<br>
+		<section class="hero is-small is-dark" >
+				<div class="hero-body">
+					Howdy {{ profile.user }} !
+				</div>
+		</section>
+		<br>
+
+
+<div class="tile is-ancestor is-grey">
+  <div class="tile is-parent">
+    <article class="tile is-child box is-grey">
+      <p class="title">Tasks done</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box is-grey">
+      <p class="title">Streak &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{profile.streak}}</p>
+      <figure class="image is-2by2">
+        <img src="https://image.freepik.com/free-vector/love-emoji_53876-25514.jpg">
+      </figure>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box is-grey">
+      <p class="title">Interests</p>
+      <div class="content">
+
+        {% for intrest in profile.intrests.all %}
+        <p class="title has-text-centered is-size-1 has-text-grey"> {{intrest.topic}}</p>
+        {% endfor %}</div>
+    </article>
+  </div>
+</div>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child box is-grey">
+          <p class="title">Working Hours</p>
+          {{profile.notification_time}}
+        </article>
+        <article class="tile is-child box">
+          <p class="title">Rewards &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{profile.coins}}</p>
+          <img src="https://image.freepik.com/free-vector/business-leader-man-holding-winner-golden-cup_3446-650.jpg"
+
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box is-grey">
+          <p class="title">User Details</p>
+          <br>
+          <p class="subtitle">{{profile.name}} </p>
+            <p class="subtitle">{{profile.email_id}}</p>
+
+          <figure class="image is-4by3">
+            <img src="https://image.flaticon.com/icons/svg/145/145852.svg">
+          </figure>
+        </article>
+      </div>
+    </div>
+
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box is-grey">
+      <div class="content">
+        <p class="title">Tasks to do</p>
+        <div class="content">
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+
+
+</div>
 {% endblock %}
