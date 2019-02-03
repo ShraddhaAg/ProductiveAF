@@ -1,5 +1,7 @@
 # ProductiveAF
 
+Stay productive throughout the day, avoid distractions, get notified about relevant articles and projects that you are currently working on. Get rewarded by achieving your goals and earn streak points. Motivation is the lock and incentive is the key. Here, take the [key](#Prerequisites)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes.
