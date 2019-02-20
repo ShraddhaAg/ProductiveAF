@@ -13,7 +13,7 @@
   <div class="tile is-parent">
     <article class="tile is-child box">
       <p class="title">Keywords</p>
-        <br><br>
+
         <p class="has-text-centered has-text-grey is-size-3">{{ key.kw }}</p>
 
     </article>
@@ -27,14 +27,14 @@
 
     </article>
   </div>
-  <div class="tile is-parent">
+  <div class="tile is-parent is-one-third">
     <article class="tile is-child box">
       <p class="title">Lined up</p>
       <div class="content">
         {% for links in key.link.all %}
         <article class="message is-success">
           <div class="message-body">
-          <a href="{{links.url}}">{{links.url}}</a>
+        <p><a href="{{links.url}}">{{links.url}}</a></p>
           </div>
         </article>
         {% endfor %}
@@ -45,5 +45,10 @@
   </div>
 </div>
 {% endfor %}
-<a class="button is-link is-large "href="{% url 'profile-detail' %}">Profile</a>
+<div class="columns">
+  <div class="column is-one-third"></div>
+  <div class="column"><a class="button is-link is-large is-fullwidth"href="{% url 'profile-detail' %}">Profile</a></div>
+  <div class="column"></div>
+</div>
+
 {% endblock %}
